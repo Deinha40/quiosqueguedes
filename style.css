@@ -53,7 +53,7 @@ header p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 40px;
 }
 
@@ -61,8 +61,8 @@ header p {
 .item {
   background-color: #fff;
   border-radius: 16px;
-  padding: 20px;
-  width: 240px;
+  padding: 15px;
+  width: 180px; /* largura menor */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -76,10 +76,12 @@ header p {
 /* Imagens dos produtos */
 .item img {
   width: 100%;
+  max-height: 120px; /* limita altura */
   height: auto;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -90,21 +92,21 @@ header p {
 
 /* Título e descrição */
 .item h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #333;
   margin-bottom: 5px;
 }
 
 .item p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
 /* Preço */
 .preco {
   display: block;
-  margin-top: 10px;
-  font-size: 1.2rem;
+  margin-top: 8px;
+  font-size: 1rem;
   font-weight: bold;
   color: #8B0000;
 }
@@ -163,6 +165,7 @@ a:hover {
   }
 }
 
+/* Rodapé */
 .rodape {
   text-align: center;
   margin-top: 40px;
@@ -174,3 +177,64 @@ a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
+/* Carrinho fixo (se estiver usando carrinho fixo) */
+#carrinho-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  background: #fff9f5;
+  border: 2px solid #8B0000;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+#carrinho-container h2 {
+  color: #8B0000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#carrinho {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#carrinho li {
+  padding: 5px 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+#resumo-total {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #8B0000;
+  font-size: 1.1rem;
+}
+
+#finalizar-pedido {
+  width: 100%;
+  padding: 10px;
+  background-color: #8B0000;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#finalizar-pedido:disabled {
+  background-color: #d49999;
+  cursor: not-allowed;
+}
+
+#finalizar-pedido:hover:not(:disabled) {
+  background-color: #6a0000;
+}
