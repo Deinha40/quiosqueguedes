@@ -1,0 +1,176 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff9f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.background-overlay {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  background-color: #8B0000;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Título das seções */
+.cardapio h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8B0000;
+}
+
+/* Lista de itens */
+.cardapio-itens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Cada item */
+.item {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagens dos produtos */
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Título e descrição */
+.item h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Preço */
+.preco {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+/* Contato */
+.contato {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+}
+
+.contato h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #8B0000;
+}
+
+.contato p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+/* Link do WhatsApp */
+a {
+  color: #007a33;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #005c26;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .cardapio-itens {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .cardapio h2,
+  .contato h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.rodape {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 1rem;
+  color: #8B0000;
+  background-color: #fff0e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
