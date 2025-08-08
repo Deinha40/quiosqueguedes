@@ -1,7 +1,6 @@
-// Dados dos produtos — para facilitar preço e nome
 const produtos = {
   "X-Burguer": 10.00,
-  "X-Frango com Bacon": 12.00,
+  "X-Bacon": 12.00,
   "X-Tudo": 18.00,
   "X-Frango": 12.00,
   "Cachorro-Quente Simples": 6.00,
@@ -94,7 +93,7 @@ function finalizarPedidoWhatsApp() {
 
 // Quando o DOM carregar
 document.addEventListener("DOMContentLoaded", () => {
-  // Botões "Pedir no WhatsApp" agora adicionam ao carrinho
+  // Botões "Adicionar ao carrinho"
   document.querySelectorAll(".btn-whatsapp").forEach(botao => {
     botao.addEventListener("click", () => {
       const produto = botao.getAttribute("data-produto");
@@ -105,6 +104,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botão finalizar pedido
   document.getElementById("finalizar-pedido").addEventListener("click", finalizarPedidoWhatsApp);
+
+  // Toggle carrinho pelo botão do header
+  const toggleBtn = document.getElementById('toggle-carrinho');
+  const carrinhoContainer = document.getElementById('carrinho-container');
+
+  toggleBtn.addEventListener('click', () => {
+    if (carrinhoContainer.style.display === 'none' || !carrinhoContainer.style.display) {
+      carrinhoContainer.style.display = 'block';
+    } else {
+      carrinhoContainer.style.display = 'none';
+    }
+  });
+
+  // Ajustar visibilidade conforme tamanho da tela
+  function ajustarVisibilidade() {
+    if (window.innerWidth <= 768) {
+      carrinhoContainer.style.display = 'none';
+    } else {
+      carrinhoContainer.style.display = 'block';
+    }
+  }
+  ajustarVisibilidade();
+
+  window.addEventListener('resize', ajustarVisibilidade);
 
   atualizarCarrinho();
 });
